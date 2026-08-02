@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://csmqq5if7h5wa"]
+
+[ext_resource type="Texture2D" uid="uid://025iip8vkoep" path="res://Assets/Level/BonnieRoom_Color-1.png" id="1_bfkex"]
+[ext_resource type="Texture2D" uid="uid://c6wcpa35a8ihg" path="res://Assets/Level/BonnieRoom_Color-5.png" id="2_iwefu"]
+[ext_resource type="Texture2D" uid="uid://ociv81ojm1rx" path="res://Assets/Level/BonnieRoom_Color-4.png" id="6_gxke2"]
+[ext_resource type="PackedScene" uid="uid://b8lgbddglqq4k" path="res://Scenes/player.tscn" id="8_bemby"]
+[ext_resource type="Script" uid="uid://d0bmfd54rttdf" path="res://Scenes/interactable.gd" id="8_gxke2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(1962.1552, 590.28064)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(205.47943, 133.15063)
+
+[node name="bedroom_Lvl" type="Node2D" unique_id=1815939177]
+
+[node name="wall" type="StaticBody2D" parent="." unique_id=1852829221]
+position = Vector2(578.6731, 307.75003)
+scale = Vector2(0.61463034, 0.61157405)
+
+[node name="wall" type="Sprite2D" parent="wall" unique_id=2066156887]
+scale = Vector2(0.99999994, 0.9999999)
+texture = ExtResource("1_bfkex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=1364936138]
+position = Vector2(-25.500061, -446.79785)
+scale = Vector2(0.9999999, 0.99999905)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="door" type="Sprite2D" parent="." unique_id=1439674955]
+position = Vector2(635.00006, 317)
+scale = Vector2(0.5315785, 0.52893525)
+texture = ExtResource("2_iwefu")
+
+[node name="chest" type="Area2D" parent="." unique_id=2110854130]
+position = Vector2(795, 326)
+scale = Vector2(0.60833335, 0.60833335)
+script = ExtResource("8_gxke2")
+
+[node name="chest" type="Sprite2D" parent="chest" unique_id=915772398]
+position = Vector2(-307.39716, -29.58905)
+texture = ExtResource("6_gxke2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest" unique_id=1111164002]
+position = Vector2(-2.4656982, 7.397278)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="player" parent="." unique_id=1647085335 instance=ExtResource("8_bemby")]
+position = Vector2(1037, 280.00003)
+scale = Vector2(1.154479, 1.154479)
