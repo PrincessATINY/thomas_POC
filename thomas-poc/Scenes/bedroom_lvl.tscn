@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://025iip8vkoep" path="res://Assets/Level/BonnieRoom_Color-1.png" id="1_bfkex"]
 [ext_resource type="Texture2D" uid="uid://cltyavpq7amle" path="res://Assets/Level/BonnieRoom_Color-6.png" id="2_gxke2"]
 [ext_resource type="Texture2D" uid="uid://c6wcpa35a8ihg" path="res://Assets/Level/BonnieRoom_Color-5.png" id="2_iwefu"]
-[ext_resource type="Texture2D" uid="uid://cek1kforai6cf" path="res://Assets/Level/BonnieRoom_Color-7.png" id="3_ft1fi"]
+[ext_resource type="Script" uid="uid://unfbgeowlwhm" path="res://Scenes/scenechange.gd" id="6_ft1fi"]
 [ext_resource type="Texture2D" uid="uid://ociv81ojm1rx" path="res://Assets/Level/BonnieRoom_Color-4.png" id="6_gxke2"]
 [ext_resource type="Texture2D" uid="uid://bxscwlbvsvihc" path="res://Assets/Level/BonnieRoom_Color-3.png" id="7_yfael"]
 [ext_resource type="Texture2D" uid="uid://b7cj848qnrjsg" path="res://Assets/Level/BonnieRoom_Color-2.png" id="8_3rcoe"]
@@ -11,78 +11,88 @@
 [ext_resource type="Script" uid="uid://d0bmfd54rttdf" path="res://Scenes/interactable.gd" id="8_gxke2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
-size = Vector2(1962.1552, 590.28064)
+size = Vector2(3127.083, 605.8144)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(427.97073, 507.6235)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(264, 176)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(205.47943, 133.15063)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
+size = Vector2(530, 432)
 
-[node name="bedroom_Lvl" type="Node2D" unique_id=1815939177]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcnqv"]
+size = Vector2(431, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7numd"]
+size = Vector2(365.5, 461)
+
+[node name="bedroom" type="Node2D" unique_id=1815939177]
 
 [node name="wall" type="StaticBody2D" parent="." unique_id=1852829221]
 position = Vector2(578.6731, 307.75003)
 scale = Vector2(0.61463034, 0.61157405)
 
 [node name="wall" type="Sprite2D" parent="wall" unique_id=2066156887]
-position = Vector2(-4.3490324, 26.570768)
-scale = Vector2(0.9745018, 0.971991)
+position = Vector2(613.4569, 378.73572)
+scale = Vector2(1.6249052, 1.6249052)
 texture = ExtResource("1_bfkex")
 
-[node name="decor" type="Sprite2D" parent="wall/wall" unique_id=392191391]
-position = Vector2(-300.5218, -23.551392)
-scale = Vector2(0.9290821, 0.9361371)
+[node name="decor" type="Sprite2D" parent="wall/wall" unique_id=1977524713]
+position = Vector2(-65.80676, -28.553467)
+scale = Vector2(1.0012856, 1.0062895)
 texture = ExtResource("2_gxke2")
 
-[node name="rug" type="Sprite2D" parent="wall/wall" unique_id=344856963]
-position = Vector2(5.008545, -70.654236)
-scale = Vector2(1.1841546, 1.1931465)
-texture = ExtResource("3_ft1fi")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=1364936138]
-position = Vector2(-25.500061, -446.79785)
-scale = Vector2(0.9999999, 0.99999905)
+position = Vector2(622.04364, -196.21494)
+scale = Vector2(0.9999999, 0.9999986)
 shape = SubResource("RectangleShape2D_57qmd")
 
-[node name="door" type="Area2D" parent="." unique_id=1785205490]
-position = Vector2(635.00006, 317)
-scale = Vector2(0.5315785, 0.52893525)
+[node name="chest" type="Area2D" parent="." unique_id=374935009]
 script = ExtResource("8_gxke2")
 
-[node name="door" type="Sprite2D" parent="door" unique_id=88851437]
-position = Vector2(-13.168465, 28.358833)
-scale = Vector2(0.99999994, 1)
-texture = ExtResource("2_iwefu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door" unique_id=336911633]
-position = Vector2(737.42615, -96.42009)
-scale = Vector2(0.9999999, 1)
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="chest" type="Area2D" parent="." unique_id=2110854130]
-position = Vector2(795, 326)
-scale = Vector2(0.60833335, 0.60833335)
-script = ExtResource("8_gxke2")
-
-[node name="chest" type="Sprite2D" parent="chest" unique_id=915772398]
-position = Vector2(-299.17807, -1.6438465)
+[node name="chest" type="Sprite2D" parent="chest" unique_id=1256408951]
+position = Vector2(1003, 537)
 texture = ExtResource("6_gxke2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chest" unique_id=1111164002]
-position = Vector2(13.15064, 37.808235)
-shape = SubResource("RectangleShape2D_yf5fn")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest" unique_id=1240154521]
+position = Vector2(1313, 567)
+shape = SubResource("RectangleShape2D_d0u6y")
 
-[node name="shelf" type="Sprite2D" parent="." unique_id=351453935]
-position = Vector2(547, 329)
-scale = Vector2(0.55416673, 0.55416673)
-texture = ExtResource("7_yfael")
+[node name="bed" type="Area2D" parent="." unique_id=1374800465]
+script = ExtResource("8_gxke2")
 
-[node name="bed" type="Sprite2D" parent="." unique_id=1731172293]
-position = Vector2(448, 310)
-scale = Vector2(0.4634259, 0.4634259)
+[node name="bed" type="Sprite2D" parent="bed" unique_id=954139261]
+position = Vector2(946, 468)
 texture = ExtResource("8_3rcoe")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bed" unique_id=490154250]
+position = Vector2(255, 540)
+shape = SubResource("RectangleShape2D_3gngh")
+
+[node name="door" type="Area2D" parent="." unique_id=835243683]
+script = ExtResource("6_ft1fi")
+
+[node name="door" type="Sprite2D" parent="door" unique_id=1612018888]
+position = Vector2(960, 541)
+texture = ExtResource("2_iwefu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door" unique_id=1578366944]
+position = Vector2(1705, 321)
+shape = SubResource("RectangleShape2D_fcnqv")
+
+[node name="shelf" type="Area2D" parent="." unique_id=1207310588]
+script = ExtResource("8_gxke2")
+
+[node name="shelf" type="Sprite2D" parent="shelf" unique_id=18382727]
+position = Vector2(972, 537)
+texture = ExtResource("7_yfael")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf" unique_id=1820055821]
+position = Vector2(873.25, 420)
+shape = SubResource("RectangleShape2D_7numd")
+
 [node name="player" parent="." unique_id=1647085335 instance=ExtResource("8_bemby")]
-position = Vector2(722, 463.99997)
-scale = Vector2(1.154479, 1.154479)
+position = Vector2(1129, 410)
+scale = Vector2(2.8867748, 2.8867748)
+
+[connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
+[connection signal="body_exited" from="door" to="door" method="_on_body_exited"]

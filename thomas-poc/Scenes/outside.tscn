@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://b8cpsv3n8rq2v"]
+
+[ext_resource type="Texture2D" uid="uid://bkcau74kssi4m" path="res://Assets/Assets Outside/Outside_Color-1.png" id="1_dxilr"]
+[ext_resource type="PackedScene" uid="uid://b8lgbddglqq4k" path="res://Scenes/player.tscn" id="2_ao2d0"]
+[ext_resource type="Texture2D" uid="uid://6s1q8qkub8i0" path="res://Assets/Assets Outside/Outside_Color-2.png" id="3_wh1al"]
+[ext_resource type="Texture2D" uid="uid://bmwc4n4w41b2u" path="res://Assets/Assets Outside/Outside_Color-3.png" id="4_uh4qc"]
+[ext_resource type="Texture2D" uid="uid://800uej4kyxn4" path="res://Assets/Assets Outside/Outside_Color-4.png" id="5_56t50"]
+[ext_resource type="Texture2D" uid="uid://cl1d47elf711" path="res://Assets/Assets Outside/Outside_Color-5.png" id="6_g3nrk"]
+[ext_resource type="Texture2D" uid="uid://pucit4dmpbws" path="res://Assets/Assets Outside/Outside_Color-6.png" id="7_omx0w"]
+[ext_resource type="Texture2D" uid="uid://b7p3wexbl3oof" path="res://Assets/Assets Outside/Outside_Color-8.png" id="7_uh4qc"]
+[ext_resource type="Texture2D" uid="uid://b21mapunhjus8" path="res://Assets/Assets Outside/Outside_Color-7.png" id="8_y6wel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1908, 380)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(1920, 444)
+
+[node name="outside" type="Node2D" unique_id=1756344698]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=907124208]
+repeat_size = Vector2(1920, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Parallax2D" unique_id=2129441372]
+
+[node name="OutsideColor1" type="Sprite2D" parent="Parallax2D/StaticBody2D" unique_id=887605201]
+position = Vector2(963, 539)
+texture = ExtResource("1_dxilr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax2D/StaticBody2D" unique_id=1336290515]
+position = Vector2(944, 180)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Parallax2D/StaticBody2D" unique_id=667545833]
+position = Vector2(974, 1178)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="fence" type="Sprite2D" parent="." unique_id=1252696059]
+position = Vector2(975, 452)
+texture = ExtResource("3_wh1al")
+
+[node name="house" type="Sprite2D" parent="." unique_id=1061965751]
+position = Vector2(969, 541)
+texture = ExtResource("4_uh4qc")
+
+[node name="door" type="Sprite2D" parent="house" unique_id=409759283]
+position = Vector2(6, 0)
+texture = ExtResource("6_g3nrk")
+
+[node name="decor" type="Sprite2D" parent="house" unique_id=1175306895]
+position = Vector2(0, 12)
+texture = ExtResource("7_omx0w")
+
+[node name="stones" type="Sprite2D" parent="house" unique_id=1175568308]
+position = Vector2(-13, 12)
+texture = ExtResource("5_56t50")
+
+[node name="portal" type="Sprite2D" parent="." unique_id=23292061]
+position = Vector2(2899, 545)
+scale = Vector2(0.7064815, 0.70648146)
+texture = ExtResource("7_uh4qc")
+
+[node name="player" parent="." unique_id=1647085335 instance=ExtResource("2_ao2d0")]
+position = Vector2(953, 698)
+scale = Vector2(2.887, 2.887)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1864469831]
+
+[node name="trees" type="Sprite2D" parent="." unique_id=2015247537]
+position = Vector2(2891, 528)
+texture = ExtResource("8_y6wel")

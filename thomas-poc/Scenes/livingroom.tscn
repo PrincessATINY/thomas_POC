@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dfl1gh3kvrqya"]
+
+[ext_resource type="Texture2D" uid="uid://cmy0b6avlpq01" path="res://Assets/LivingRoom/LivingRoom_Color-1.png" id="1_qnj4e"]
+[ext_resource type="Texture2D" uid="uid://cp6dfh8uikfcp" path="res://Assets/LivingRoom/LivingRoom_Color-5.png" id="2_os7th"]
+[ext_resource type="Texture2D" uid="uid://k3qnwqmk8j75" path="res://Assets/LivingRoom/LivingRoom_Color-2.png" id="3_g8sn2"]
+[ext_resource type="Texture2D" uid="uid://dj5lptosbf72v" path="res://Assets/LivingRoom/LivingRoom_Color-3.png" id="4_pgxhg"]
+[ext_resource type="PackedScene" uid="uid://b8lgbddglqq4k" path="res://Scenes/player.tscn" id="5_oqwt1"]
+[ext_resource type="Texture2D" uid="uid://c0ffyvbhym1wt" path="res://Assets/LivingRoom/LivingRoom_Color-4.png" id="6_gteqh"]
+
+[node name="livingroom" type="Node2D" unique_id=1882671989]
+
+[node name="wall" type="Sprite2D" parent="." unique_id=565226566]
+position = Vector2(965, 537)
+texture = ExtResource("1_qnj4e")
+
+[node name="window" type="Sprite2D" parent="wall" unique_id=156116905]
+position = Vector2(-429, -113)
+texture = ExtResource("2_os7th")
+
+[node name="door" type="Sprite2D" parent="." unique_id=1719103435]
+position = Vector2(969, 535)
+texture = ExtResource("3_g8sn2")
+
+[node name="couch" type="Sprite2D" parent="." unique_id=1021830855]
+position = Vector2(1224, 530)
+texture = ExtResource("4_pgxhg")
+
+[node name="player" parent="." unique_id=1647085335 instance=ExtResource("5_oqwt1")]
+position = Vector2(186, 415.00003)
+scale = Vector2(2.887, 2.887)
+
+[node name="tv" type="Sprite2D" parent="." unique_id=1917463178]
+position = Vector2(1217, 542)
+texture = ExtResource("6_gteqh")
