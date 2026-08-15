@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bkcau74kssi4m" path="res://Assets/Assets Outside/Outside_Color-1.png" id="1_dxilr"]
 [ext_resource type="PackedScene" uid="uid://b8lgbddglqq4k" path="res://Scenes/player.tscn" id="2_ao2d0"]
 [ext_resource type="Texture2D" uid="uid://6s1q8qkub8i0" path="res://Assets/Assets Outside/Outside_Color-2.png" id="3_wh1al"]
+[ext_resource type="Script" uid="uid://bjqm26mcmnfw6" path="res://Scripts/housedoor.gd" id="4_56t50"]
 [ext_resource type="Texture2D" uid="uid://bmwc4n4w41b2u" path="res://Assets/Assets Outside/Outside_Color-3.png" id="4_uh4qc"]
 [ext_resource type="Texture2D" uid="uid://800uej4kyxn4" path="res://Assets/Assets Outside/Outside_Color-4.png" id="5_56t50"]
 [ext_resource type="Texture2D" uid="uid://cl1d47elf711" path="res://Assets/Assets Outside/Outside_Color-5.png" id="6_g3nrk"]
@@ -21,6 +22,9 @@ size = Vector2(604, 1148)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
 size = Vector2(748, 1641.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
+size = Vector2(213, 115.99832)
 
 [node name="outside" type="Node2D" unique_id=1756344698]
 
@@ -63,9 +67,16 @@ position = Vector2(969, 487.5)
 scale = Vector2(1, 1.0990741)
 texture = ExtResource("4_uh4qc")
 
-[node name="door" type="Sprite2D" parent="house" unique_id=409759283]
+[node name="door" type="Area2D" parent="house" unique_id=46876912]
+script = ExtResource("4_56t50")
+
+[node name="door" type="Sprite2D" parent="house/door" unique_id=409759283]
 position = Vector2(6, 0)
 texture = ExtResource("6_g3nrk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="house/door" unique_id=1344267629]
+position = Vector2(-1.5, 47.999176)
+shape = SubResource("RectangleShape2D_3gngh")
 
 [node name="decor" type="Sprite2D" parent="house" unique_id=1175306895]
 position = Vector2(0, 12)
@@ -91,3 +102,6 @@ visible = false
 [node name="trees" type="Sprite2D" parent="." unique_id=2015247537]
 position = Vector2(2891, 528)
 texture = ExtResource("8_y6wel")
+
+[connection signal="body_entered" from="house/door" to="house/door" method="_on_body_entered"]
+[connection signal="body_exited" from="house/door" to="house/door" method="_on_body_exited"]

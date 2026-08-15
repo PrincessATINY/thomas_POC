@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cmy0b6avlpq01" path="res://Assets/LivingRoom/LivingRoom_Color-1.png" id="1_qnj4e"]
 [ext_resource type="Texture2D" uid="uid://cp6dfh8uikfcp" path="res://Assets/LivingRoom/LivingRoom_Color-5.png" id="2_os7th"]
 [ext_resource type="Texture2D" uid="uid://k3qnwqmk8j75" path="res://Assets/LivingRoom/LivingRoom_Color-2.png" id="3_g8sn2"]
-[ext_resource type="Script" uid="uid://dbbhtu8b82qqg" path="res://Scenes/frontdoor.gd" id="4_g8sn2"]
+[ext_resource type="Script" uid="uid://dbbhtu8b82qqg" path="res://Scripts/frontdoor.gd" id="4_g8sn2"]
 [ext_resource type="Texture2D" uid="uid://dj5lptosbf72v" path="res://Assets/LivingRoom/LivingRoom_Color-3.png" id="4_pgxhg"]
 [ext_resource type="PackedScene" uid="uid://b8lgbddglqq4k" path="res://Scenes/player.tscn" id="5_oqwt1"]
 [ext_resource type="Texture2D" uid="uid://c0ffyvbhym1wt" path="res://Assets/LivingRoom/LivingRoom_Color-4.png" id="6_gteqh"]
