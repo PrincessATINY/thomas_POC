@@ -11,36 +11,56 @@
 [ext_resource type="Texture2D" uid="uid://b21mapunhjus8" path="res://Assets/Assets Outside/Outside_Color-7.png" id="8_y6wel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(1908, 380)
+size = Vector2(4193, 554)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(1920, 444)
+size = Vector2(4202.5, 683.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(604, 1148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(748, 1641.5)
 
 [node name="outside" type="Node2D" unique_id=1756344698]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=907124208]
 repeat_size = Vector2(1920, 0)
+ignore_camera_scroll = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Parallax2D" unique_id=2129441372]
 
 [node name="OutsideColor1" type="Sprite2D" parent="Parallax2D/StaticBody2D" unique_id=887605201]
-position = Vector2(963, 539)
+texture_repeat = 2
+position = Vector2(961.00006, 572)
+scale = Vector2(1.1888889, 1.1888889)
 texture = ExtResource("1_dxilr")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax2D/StaticBody2D" unique_id=1336290515]
-position = Vector2(944, 180)
+position = Vector2(1924.5, 267)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Parallax2D/StaticBody2D" unique_id=667545833]
-position = Vector2(974, 1178)
+position = Vector2(1911.75, 1239.75)
 shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Parallax2D/StaticBody2D" unique_id=753646182]
+position = Vector2(292, 564)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Parallax2D/StaticBody2D" unique_id=266988321]
+position = Vector2(3639, 748.25)
+shape = SubResource("RectangleShape2D_d0u6y")
 
 [node name="fence" type="Sprite2D" parent="." unique_id=1252696059]
 position = Vector2(975, 452)
 texture = ExtResource("3_wh1al")
 
 [node name="house" type="Sprite2D" parent="." unique_id=1061965751]
-position = Vector2(969, 541)
+position = Vector2(969, 487.5)
+scale = Vector2(1, 1.0990741)
 texture = ExtResource("4_uh4qc")
 
 [node name="door" type="Sprite2D" parent="house" unique_id=409759283]
@@ -56,15 +76,17 @@ position = Vector2(-13, 12)
 texture = ExtResource("5_56t50")
 
 [node name="portal" type="Sprite2D" parent="." unique_id=23292061]
+visible = false
 position = Vector2(2899, 545)
 scale = Vector2(0.7064815, 0.70648146)
 texture = ExtResource("7_uh4qc")
 
 [node name="player" parent="." unique_id=1647085335 instance=ExtResource("2_ao2d0")]
-position = Vector2(953, 698)
+position = Vector2(983, 653.00006)
 scale = Vector2(2.887, 2.887)
 
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=1864469831]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1493179710]
+visible = false
 
 [node name="trees" type="Sprite2D" parent="." unique_id=2015247537]
 position = Vector2(2891, 528)

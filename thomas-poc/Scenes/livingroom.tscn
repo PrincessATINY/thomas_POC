@@ -3,32 +3,68 @@
 [ext_resource type="Texture2D" uid="uid://cmy0b6avlpq01" path="res://Assets/LivingRoom/LivingRoom_Color-1.png" id="1_qnj4e"]
 [ext_resource type="Texture2D" uid="uid://cp6dfh8uikfcp" path="res://Assets/LivingRoom/LivingRoom_Color-5.png" id="2_os7th"]
 [ext_resource type="Texture2D" uid="uid://k3qnwqmk8j75" path="res://Assets/LivingRoom/LivingRoom_Color-2.png" id="3_g8sn2"]
+[ext_resource type="Script" uid="uid://dbbhtu8b82qqg" path="res://Scenes/frontdoor.gd" id="4_g8sn2"]
 [ext_resource type="Texture2D" uid="uid://dj5lptosbf72v" path="res://Assets/LivingRoom/LivingRoom_Color-3.png" id="4_pgxhg"]
 [ext_resource type="PackedScene" uid="uid://b8lgbddglqq4k" path="res://Scenes/player.tscn" id="5_oqwt1"]
 [ext_resource type="Texture2D" uid="uid://c0ffyvbhym1wt" path="res://Assets/LivingRoom/LivingRoom_Color-4.png" id="6_gteqh"]
+[ext_resource type="Script" uid="uid://bagqrnkeuo6em" path="res://Scripts/sideWall.gd" id="7_os7th"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(1953, 419)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(300, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(173, 1092)
 
 [node name="livingroom" type="Node2D" unique_id=1882671989]
 
-[node name="wall" type="Sprite2D" parent="." unique_id=565226566]
+[node name="wall" type="StaticBody2D" parent="." unique_id=276715512]
+
+[node name="wall" type="Sprite2D" parent="wall" unique_id=565226566]
 position = Vector2(965, 537)
 texture = ExtResource("1_qnj4e")
 
-[node name="window" type="Sprite2D" parent="wall" unique_id=156116905]
+[node name="window" type="Sprite2D" parent="wall/wall" unique_id=156116905]
 position = Vector2(-429, -113)
 texture = ExtResource("2_os7th")
 
-[node name="door" type="Sprite2D" parent="." unique_id=1719103435]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=600860826]
+position = Vector2(966.5, 199.5)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="frontdoor" type="Area2D" parent="." unique_id=727193057]
+script = ExtResource("4_g8sn2")
+
+[node name="door" type="Sprite2D" parent="frontdoor" unique_id=1719103435]
 position = Vector2(969, 535)
 texture = ExtResource("3_g8sn2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frontdoor" unique_id=1293340913]
+position = Vector2(1663, 355)
+shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="couch" type="Sprite2D" parent="." unique_id=1021830855]
 position = Vector2(1224, 530)
 texture = ExtResource("4_pgxhg")
 
 [node name="player" parent="." unique_id=1647085335 instance=ExtResource("5_oqwt1")]
-position = Vector2(186, 415.00003)
+position = Vector2(307, 642)
 scale = Vector2(2.887, 2.887)
 
 [node name="tv" type="Sprite2D" parent="." unique_id=1917463178]
 position = Vector2(1217, 542)
 texture = ExtResource("6_gteqh")
+
+[node name="sideWall" type="Area2D" parent="." unique_id=1391341296]
+script = ExtResource("7_os7th")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sideWall" unique_id=1529301328]
+position = Vector2(76.5, 536)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="body_entered" from="frontdoor" to="frontdoor" method="_on_body_entered"]
+[connection signal="body_exited" from="frontdoor" to="frontdoor" method="_on_body_exited"]
+[connection signal="body_entered" from="sideWall" to="sideWall" method="_on_body_entered"]
+[connection signal="body_exited" from="sideWall" to="sideWall" method="_on_body_exited"]
