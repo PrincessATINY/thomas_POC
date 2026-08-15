@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://d1vwh4afo2lqr"]
+
+[ext_resource type="Texture2D" uid="uid://heaychu4pf6k" path="res://Assets/Kitchen/Kitchen_Color-1.png" id="1_qb5jn"]
+[ext_resource type="Texture2D" uid="uid://dyo3d451s5uqa" path="res://Assets/Kitchen/Kitchen_Color-5.png" id="2_aiglu"]
+[ext_resource type="Texture2D" uid="uid://bdchmjxptf35r" path="res://Assets/Kitchen/Kitchen_Color-2.png" id="3_xgkd1"]
+[ext_resource type="Texture2D" uid="uid://dn8xpsx4hhwd6" path="res://Assets/Kitchen/Kitchen_Color-4.png" id="4_uknxu"]
+[ext_resource type="Texture2D" uid="uid://bxvb24ce8hmvn" path="res://Assets/Kitchen/Kitchen_Color-3.png" id="5_lrvvp"]
+[ext_resource type="PackedScene" uid="uid://b8lgbddglqq4k" path="res://Scenes/player.tscn" id="6_xscdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(159, 236)
+
+[node name="house_lvl" type="Node2D" unique_id=1909458988]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=280490816]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1150, 0)
+autoscroll = Vector2(1, 0)
+
+[node name="wall" type="Sprite2D" parent="Parallax2D" unique_id=1853796088]
+position = Vector2(575.50006, 322.99997)
+scale = Vector2(0.60156244, 0.5981481)
+texture = ExtResource("1_qb5jn")
+
+[node name="stove" type="StaticBody2D" parent="." unique_id=802983437]
+
+[node name="stove" type="Sprite2D" parent="stove" unique_id=48989917]
+position = Vector2(728.00006, 322)
+scale = Vector2(0.60335636, 0.6033565)
+texture = ExtResource("4_uknxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stove" unique_id=18360385]
+position = Vector2(930.5, 279)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="decor" type="Sprite2D" parent="." unique_id=775705778]
+position = Vector2(542, 272)
+scale = Vector2(0.48472232, 0.4847223)
+texture = ExtResource("5_lrvvp")
+
+[node name="door" type="Sprite2D" parent="." unique_id=757148012]
+position = Vector2(548, 328)
+scale = Vector2(0.56111115, 0.5611111)
+texture = ExtResource("3_xgkd1")
+
+[node name="player" parent="." unique_id=1647085335 instance=ExtResource("6_xscdw")]
+position = Vector2(140, 291)
+scale = Vector2(1.145, 1.145)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=2009282731]
+
+[node name="table" type="Sprite2D" parent="." unique_id=1792730336]
+position = Vector2(546, 377.00003)
+scale = Vector2(0.59074074, 0.59074074)
+texture = ExtResource("2_aiglu")
