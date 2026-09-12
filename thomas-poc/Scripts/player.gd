@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
+@onready var animated_sprite = $AnimatedSprite2D
+@onready var health_bar: float = 100
+# PLAYER STARTS IN CURRENT POSITION OF SCREEN!!
+
 var speed = 300
 var click_pos = Vector2()
 
-@onready var animated_sprite = $AnimatedSprite2D
-
-# PLAYER STARTS IN CURRENT POSITION OF SCREEN!!
 func _ready():
 	click_pos = position
-
+	
 # POINT AND CLICK FUNCTION!!
 func _physics_process(delta):
 	if Input.is_action_just_pressed("leftClick"):
