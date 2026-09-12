@@ -12,4 +12,3 @@ func _process(delta):
 	if player_entered == true:
 		if Input.is_action_just_pressed("leftClick"):
 			get_tree().change_scene_to_file("res://Scenes/kitchen.tscn")
-			
