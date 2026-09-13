@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ol0urhue8r3x"]
+
+[ext_resource type="Script" uid="uid://comecufkfsmym" path="res://Scripts/slot.gd" id="1_12ej0"]
+[ext_resource type="Texture2D" uid="uid://bnypbsj6jrg21" path="res://Assets/Inventory/IMG_0571.PNG" id="2_67ou1"]
+
+[node name="slot" type="Button" unique_id=108809043]
+custom_minimum_size = Vector2(250, 250)
+script = ExtResource("1_12ej0")
+
+[node name="icon" type="TextureRect" parent="." unique_id=568027146]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.56729
+offset_top = -118.976654
+offset_right = 118.34317
+offset_bottom = 113.524506
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_67ou1")
+expand_mode = 1
+
+[node name="qty" type="Label" parent="." unique_id=111112074]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -24,3 +24,6 @@ func _physics_process(delta):
 		move_and_slide()
 	else:
 		animated_sprite.play("Idle")
+	
+	if Input.is_action_just_pressed("quitGame"):
+		get_tree().quit()

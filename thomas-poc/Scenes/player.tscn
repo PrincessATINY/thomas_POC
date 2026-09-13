@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dedy5eha2dlcf" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-5.png" id="6_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://cg0lvu7ra5pxd" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-6.png" id="7_7dp3o"]
 [ext_resource type="Texture2D" uid="uid://gxkb78dywoom" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-7.png" id="8_h4iuc"]
+[ext_resource type="Script" uid="uid://mbevr4r2v2nk" path="res://Scripts/inventory.gd" id="9_gymyn"]
+[ext_resource type="PackedScene" uid="uid://ol0urhue8r3x" path="res://Scenes/slot.tscn" id="10_tx1dd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -49,6 +51,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_10k86"]
 size = Vector2(60.000507, 67.56814)
 
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font_size = 64
+
 [node name="player" type="CharacterBody2D" unique_id=1647085335]
 scale = Vector2(1.8499844, 1.8499844)
 script = ExtResource("1_8erm5")
@@ -63,3 +68,52 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=783188320]
 position = Vector2(-0.27027363, 34.865158)
 shape = SubResource("RectangleShape2D_10k86")
+
+[node name="inventory" type="Node" parent="." unique_id=904251550]
+script = ExtResource("9_gymyn")
+
+[node name="window" type="Panel" parent="inventory" unique_id=1891502685]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="slotContainer" type="GridContainer" parent="inventory/window" unique_id=455494446]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33020833
+anchor_top = 0.073148146
+anchor_right = 0.7305098
+anchor_bottom = 1.0731481
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8301035, 0.8301035)
+columns = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="slot" parent="inventory/window/slotContainer" unique_id=108809043 instance=ExtResource("10_tx1dd")]
+layout_mode = 2
+
+[node name="slot2" parent="inventory/window/slotContainer" unique_id=286267735 instance=ExtResource("10_tx1dd")]
+layout_mode = 2
+
+[node name="slot3" parent="inventory/window/slotContainer" unique_id=434438551 instance=ExtResource("10_tx1dd")]
+layout_mode = 2
+
+[node name="infotxt" type="Label" parent="inventory/window" unique_id=1129481661]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -512.0
+offset_right = -6.0
+offset_bottom = -424.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Inventory"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
