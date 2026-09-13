@@ -2,6 +2,21 @@
 
 [ext_resource type="Theme" uid="uid://donuax8t5cral" path="res://Assets/Themes/default_theme.tres" id="1_62a3i"]
 [ext_resource type="Script" uid="uid://dukfsyagk1j52" path="res://Scripts/startmenu.gd" id="2_bk022"]
+[ext_resource type="Texture2D" uid="uid://d3etkq4n5e0s6" path="res://Assets/Inventory/IMG_0569.PNG" id="3_bk022"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fqf8d"]
+texture = ExtResource("3_bk022")
+expand_margin_left = 368.0
+expand_margin_top = 162.0
+expand_margin_right = 300.0
+expand_margin_bottom = 133.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lcnlw"]
+texture = ExtResource("3_bk022")
+expand_margin_left = 368.0
+expand_margin_top = 162.0
+expand_margin_right = 300.0
+expand_margin_bottom = 133.0
 
 [node name="startMenu" type="Control" unique_id=1548170087]
 layout_mode = 3
@@ -20,7 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.09019608, 0.09019608, 0.10980392, 1)
+color = Color(0.004026074, 0.05146328, 0.07655019, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1923757691]
 layout_mode = 1
@@ -36,13 +51,15 @@ theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=914764688]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=524613513]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 96
-text = "GAME NAME"
+theme_override_font_sizes/font_size = 120
+text = "Grim Hares"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -60,15 +77,19 @@ focus_neighbor_bottom = NodePath("../exitBttn")
 focus_next = NodePath("../exitBttn")
 focus_previous = NodePath("../exitBttn")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxTexture_fqf8d")
 text = "Start Game"
 
 [node name="exitBttn" type="Button" parent="MarginContainer/VBoxContainer/buttonsVBox" unique_id=1068369681]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 focus_neighbor_top = NodePath("../startBttn")
 focus_neighbor_bottom = NodePath("../startBttn")
 focus_next = NodePath("../startBttn")
 focus_previous = NodePath("../startBttn")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxTexture_lcnlw")
 text = "Exit"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

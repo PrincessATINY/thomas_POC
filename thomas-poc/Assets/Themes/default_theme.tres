@@ -8,7 +8,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lafxv"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1xxkl"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ll232"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3sg1g"]
 
@@ -27,13 +27,13 @@
 [resource]
 default_font = ExtResource("1_fqf8d")
 default_font_size = 32
-Button/colors/font_focus_color = Color(0.9764706, 0.6666667, 0.9647059, 1)
-Button/colors/font_hover_color = Color(0.9764706, 0.6666667, 0.9647059, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.56599575, 0.75792605, 0.9813462, 1)
 Button/colors/font_pressed_color = Color(0.9862283, 0.8968784, 0.6025742, 1)
 Button/styles/disabled = SubResource("StyleBoxEmpty_gsvov")
 Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_6whks")
 Button/styles/focus = SubResource("StyleBoxEmpty_lafxv")
-Button/styles/hover = SubResource("StyleBoxEmpty_1xxkl")
+Button/styles/hover = SubResource("StyleBoxEmpty_ll232")
 Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_3sg1g")
 Button/styles/hover_pressed = SubResource("StyleBoxEmpty_lt4se")
 Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asvep")

@@ -8,9 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dedy5eha2dlcf" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-5.png" id="6_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://cg0lvu7ra5pxd" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-6.png" id="7_7dp3o"]
 [ext_resource type="Texture2D" uid="uid://gxkb78dywoom" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-7.png" id="8_h4iuc"]
-[ext_resource type="Script" uid="uid://mbevr4r2v2nk" path="res://Scripts/inventory.gd" id="9_gymyn"]
-[ext_resource type="Script" uid="uid://dho62t3xt6y2w" path="res://Scripts/slots.gd" id="10_pu2lt"]
-[ext_resource type="PackedScene" uid="uid://bq57rqt7atsja" path="res://Scenes/item.tscn" id="11_ukyrk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -53,7 +50,6 @@ animations = [{
 size = Vector2(60.000507, 67.56814)
 
 [node name="player" type="CharacterBody2D" unique_id=1647085335]
-position = Vector2(986, 582)
 scale = Vector2(1.8499844, 1.8499844)
 script = ExtResource("1_8erm5")
 metadata/_edit_group_ = true
@@ -67,44 +63,3 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=783188320]
 position = Vector2(-0.27027363, 34.865158)
 shape = SubResource("RectangleShape2D_10k86")
-
-[node name="Inventory" type="Node" parent="." unique_id=1018394351]
-script = ExtResource("9_gymyn")
-
-[node name="inventoryWindow" type="Panel" parent="Inventory" unique_id=1466274808]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="slots" type="GridContainer" parent="Inventory/inventoryWindow" unique_id=457889446]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 42.0
-offset_top = 29.0
-offset_right = -37.0
-offset_bottom = -54.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 5
-script = ExtResource("10_pu2lt")
-
-[node name="item" parent="Inventory/inventoryWindow/slots" unique_id=932335850 instance=ExtResource("11_ukyrk")]
-layout_mode = 2
-
-[node name="infotext" type="Label" parent="Inventory/inventoryWindow" unique_id=1940675235]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -56.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 32
-text = "INVENTORY"
-horizontal_alignment = 1
-vertical_alignment = 1
