@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dbkfyfhfo8t0o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+line_spacing = 1.0
+font_size = 32
+
+[node name="HUD" type="CanvasLayer" unique_id=1170364226]
+
+[node name="howToPlay" type="Label" parent="." unique_id=526179925]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -184.0
+offset_right = 424.0
+offset_bottom = -43.0
+grow_vertical = 0
+text = "LMB Click = Move/Interact
+Tab = Inventory
+Esc = Quit Game"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="objectives" type="Label" parent="." unique_id=1864096359]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -230.0
+offset_top = 28.0
+offset_right = -26.0
+offset_bottom = 211.0
+grow_horizontal = 0
+text = "Objectives
+_______________
+
+Leave"
+label_settings = SubResource("LabelSettings_yf5fn")
+horizontal_alignment = 1

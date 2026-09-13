@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://gxkb78dywoom" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-7.png" id="8_h4iuc"]
 [ext_resource type="Script" uid="uid://mbevr4r2v2nk" path="res://Scripts/inventory.gd" id="9_gymyn"]
 [ext_resource type="PackedScene" uid="uid://ol0urhue8r3x" path="res://Scenes/slot.tscn" id="10_tx1dd"]
+[ext_resource type="PackedScene" uid="uid://dbkfyfhfo8t0o" path="res://Scenes/hud.tscn" id="11_gymyn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -117,3 +118,5 @@ grow_vertical = 0
 text = "Inventory"
 label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
+
+[node name="HUD" parent="." unique_id=1170364226 instance=ExtResource("11_gymyn")]
