@@ -28,7 +28,7 @@
 default_font = ExtResource("1_fqf8d")
 default_font_size = 32
 Button/colors/font_focus_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_color = Color(0.56599575, 0.75792605, 0.9813462, 1)
+Button/colors/font_hover_color = Color(0.9518619, 0.7600513, 1, 1)
 Button/colors/font_pressed_color = Color(0.9862283, 0.8968784, 0.6025742, 1)
 Button/styles/disabled = SubResource("StyleBoxEmpty_gsvov")
 Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_6whks")

@@ -20,7 +20,8 @@ offset_bottom = -43.0
 grow_vertical = 0
 text = "LMB Click = Move/Interact
 Tab = Inventory
-Esc = Quit Game"
+Esc = Quit Game
+SPACE = Pause Game"
 label_settings = SubResource("LabelSettings_g4v7s")
 
 [node name="objectives" type="Label" parent="." unique_id=1864096359]

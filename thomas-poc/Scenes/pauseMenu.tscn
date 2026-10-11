@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://wd0um7bku4en"]
+
+[ext_resource type="FontFile" uid="uid://dv5ocyo10dwxk" path="res://Assets/zomboid-font/Zomboid-zrB34.ttf" id="1_lav5v"]
+[ext_resource type="Script" uid="uid://c3cwusvuw3a4x" path="res://Scripts/pauseMenu.gd" id="1_shfa6"]
+[ext_resource type="Texture2D" uid="uid://sdyle0yr8pxw" path="res://Assets/Inventory/IMG_0568.PNG" id="2_shfa6"]
+[ext_resource type="Texture2D" uid="uid://cxt6wg2uvx1xr" path="res://Assets/Inventory/IMG_0567.PNG" id="3_efbdn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gsvov"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6whks"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lafxv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ll232"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3sg1g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lt4se"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_asvep"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udj3d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aili0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7u14"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5ari"]
+
+[sub_resource type="Theme" id="Theme_shfa6"]
+default_font = ExtResource("1_lav5v")
+default_font_size = 32
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.9946998, 0.73663574, 1, 1)
+Button/colors/font_pressed_color = Color(0.9862283, 0.8968784, 0.6025742, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_gsvov")
+Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_6whks")
+Button/styles/focus = SubResource("StyleBoxEmpty_lafxv")
+Button/styles/hover = SubResource("StyleBoxEmpty_ll232")
+Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_3sg1g")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_lt4se")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_asvep")
+Button/styles/normal = SubResource("StyleBoxEmpty_udj3d")
+Button/styles/normal_mirrored = SubResource("StyleBoxEmpty_aili0")
+Button/styles/pressed = SubResource("StyleBoxEmpty_a7u14")
+Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_o5ari")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_efbdn"]
+texture = ExtResource("3_efbdn")
+expand_margin_left = 923.0
+expand_margin_top = 141.0
+expand_margin_right = 932.0
+expand_margin_bottom = 272.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4v7s"]
+texture = ExtResource("2_shfa6")
+expand_margin_left = 368.0
+expand_margin_top = 162.0
+expand_margin_right = 300.0
+expand_margin_bottom = 133.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ukyrk"]
+texture = ExtResource("2_shfa6")
+expand_margin_left = 368.0
+expand_margin_top = 162.0
+expand_margin_right = 300.0
+expand_margin_bottom = 133.0
+
+[node name="pauseCanvas" type="CanvasLayer" unique_id=103062306]
+
+[node name="pauseMenu" type="Control" parent="." unique_id=2034940724]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1916.0
+offset_bottom = 1076.0
+theme = SubResource("Theme_shfa6")
+script = ExtResource("1_shfa6")
+
+[node name="ColorRect" type="ColorRect" parent="pauseMenu" unique_id=1737423082]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.003921569, 0.050980393, 0.078431375, 1)
+
+[node name="Panel" type="Panel" parent="pauseMenu" unique_id=542261238]
+layout_mode = 0
+offset_right = 1916.0
+offset_bottom = 1076.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pauseMenu" unique_id=1168622964]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.125
+offset_top = -102.171875
+offset_right = 215.125
+offset_bottom = 102.171875
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-213, 105.5)
+
+[node name="Label" type="Label" parent="pauseMenu/VBoxContainer" unique_id=1339564052]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.003921569, 0.050980393, 0.078431375, 1)
+theme_override_fonts/font = ExtResource("1_lav5v")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxTexture_efbdn")
+text = "Pause Menu"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pauseMenu/VBoxContainer" unique_id=1576436948]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="resumeBttn" type="Button" parent="pauseMenu/VBoxContainer/VBoxContainer" unique_id=984902252]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.003921569, 0.050980393, 0.078431375, 1)
+theme_override_fonts/font = ExtResource("1_lav5v")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxTexture_g4v7s")
+text = "Resume"
+
+[node name="quitBttn" type="Button" parent="pauseMenu/VBoxContainer/VBoxContainer" unique_id=2083364191]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.003921569, 0.050980393, 0.078431375, 1)
+theme_override_fonts/font = ExtResource("1_lav5v")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxTexture_ukyrk")
+text = "Quit"
+
+[connection signal="pressed" from="pauseMenu/VBoxContainer/VBoxContainer/resumeBttn" to="pauseMenu" method="_on_resume_bttn_pressed"]
+[connection signal="pressed" from="pauseMenu/VBoxContainer/VBoxContainer/quitBttn" to="pauseMenu" method="_on_quit_bttn_pressed"]

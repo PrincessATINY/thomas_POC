@@ -24,10 +24,11 @@ func _process (delta):
 	
 	if Input.is_action_just_pressed("inventory"):
 		toggle_window(!window.visible)
+		
 
 func toggle_window (open : bool):
 	window.visible = open
-	
+
 	#DISPLAY MOUSE CURSOR WHEN INVENTORY IS OPEN!!
 	if open:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

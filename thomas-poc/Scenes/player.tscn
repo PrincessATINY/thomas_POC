@@ -2,15 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cjfr7lkvyrutb" path="res://Scripts/player.gd" id="1_8erm5"]
 [ext_resource type="Texture2D" uid="uid://e5e45js8j818" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-1.png" id="2_f1ek2"]
-[ext_resource type="Texture2D" uid="uid://dnftqjorepo7f" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-2.png" id="3_tx1dd"]
-[ext_resource type="Texture2D" uid="uid://kqqlpju2o4ck" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-3.png" id="4_gymyn"]
-[ext_resource type="Texture2D" uid="uid://bmvpe3kdmtfje" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-4.png" id="5_pu2lt"]
-[ext_resource type="Texture2D" uid="uid://dedy5eha2dlcf" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-5.png" id="6_ukyrk"]
-[ext_resource type="Texture2D" uid="uid://cg0lvu7ra5pxd" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-6.png" id="7_7dp3o"]
-[ext_resource type="Texture2D" uid="uid://gxkb78dywoom" path="res://Assets/Bonnie_Move/Bonnie_MoveColor-7.png" id="8_h4iuc"]
+[ext_resource type="Texture2D" uid="uid://jp2vi51b4gdm" path="res://Assets/Bonnie_Move/Move/Bonnie_MoveColor-1.png" id="3_h4iuc"]
+[ext_resource type="Texture2D" uid="uid://cv820f6vw2ol2" path="res://Assets/Bonnie_Move/Move/Bonnie_MoveColor-2.png" id="4_fd4e3"]
+[ext_resource type="Texture2D" uid="uid://cpyjgqtstrbep" path="res://Assets/Bonnie_Move/Move/Bonnie_MoveColor-3.png" id="5_qqcod"]
+[ext_resource type="Texture2D" uid="uid://dlv5wsvbs8owb" path="res://Assets/Bonnie_Move/Move/Bonnie_MoveColor-4.png" id="6_igrcy"]
+[ext_resource type="Texture2D" uid="uid://07ggo8k5dwov" path="res://Assets/Bonnie_Move/Move/Bonnie_MoveColor-5.png" id="7_fs7ks"]
+[ext_resource type="Texture2D" uid="uid://btl2g6xjnuqch" path="res://Assets/Bonnie_Move/Move/Bonnie_MoveColor-6.png" id="8_l6n3p"]
 [ext_resource type="Script" uid="uid://mbevr4r2v2nk" path="res://Scripts/inventory.gd" id="9_gymyn"]
+[ext_resource type="Texture2D" uid="uid://bcfe5hoigs72n" path="res://Assets/Bonnie_Move/Move/Bonnie_MoveColor-7.png" id="9_olqyp"]
 [ext_resource type="PackedScene" uid="uid://ol0urhue8r3x" path="res://Scenes/slot.tscn" id="10_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://cxqhtqtt2ip3u" path="res://Assets/Bonnie_Move/Move/Bonnie_MoveColor-8.png" id="10_wpjfl"]
+[ext_resource type="Texture2D" uid="uid://b7hglushxpptc" path="res://Assets/Bonnie_Move/Move/Bonnie_MoveColor-9.png" id="11_bi64h"]
 [ext_resource type="PackedScene" uid="uid://dbkfyfhfo8t0o" path="res://Scenes/hud.tscn" id="11_gymyn"]
+[ext_resource type="PackedScene" uid="uid://wd0um7bku4en" path="res://Scenes/pauseMenu.tscn" id="12_pu2lt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -24,25 +28,31 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_f1ek2")
+"texture": ExtResource("3_h4iuc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_tx1dd")
+"texture": ExtResource("4_fd4e3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_gymyn")
+"texture": ExtResource("5_qqcod")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_pu2lt")
+"texture": ExtResource("6_igrcy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ukyrk")
+"texture": ExtResource("7_fs7ks")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_7dp3o")
+"texture": ExtResource("8_l6n3p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_h4iuc")
+"texture": ExtResource("9_olqyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wpjfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bi64h")
 }],
 "loop": 1,
 "name": &"Walk",
@@ -65,6 +75,7 @@ scale = Vector2(0.172084, 0.1858507)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"Idle"
 autoplay = "Idle"
+frame_progress = 0.17815517
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=783188320]
 position = Vector2(-0.27027363, 34.865158)
@@ -96,6 +107,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="slot" parent="inventory/window/slotContainer" unique_id=108809043 instance=ExtResource("10_tx1dd")]
 layout_mode = 2
+icon_alignment = 1
 
 [node name="slot2" parent="inventory/window/slotContainer" unique_id=286267735 instance=ExtResource("10_tx1dd")]
 layout_mode = 2
@@ -120,3 +132,5 @@ label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
 
 [node name="HUD" parent="." unique_id=1170364226 instance=ExtResource("11_gymyn")]
+
+[node name="pauseCanvas" parent="." unique_id=103062306 instance=ExtResource("12_pu2lt")]
